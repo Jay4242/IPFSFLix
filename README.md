@@ -23,3 +23,15 @@ All nodes can be clients & servers.  Anything cached to a 'client' node acts as 
 
 ------
 
+#### ipfs-add-movies.bash
+
+Adds videos using the IPFS 'filestore' (to not use extra space) to IPFS & the IPFS MFS filesystem under '/movies/'
+
+------
+
+#### ipns-refresh.bash
+
+Uses a text file such as the ipfs-namemap.list.sample to create symlinks in a specified directory.  This resolves the IPNS address to an IPFS address to prevent the directory from hanging when IPNS is unresovlable.  
+
+
+------

@@ -27,6 +27,8 @@ All nodes can be clients & servers.  Anything cached to a 'client' node acts as 
 
 Adds videos using the IPFS 'filestore' (to not use extra space) to IPFS & the IPFS MFS filesystem under '/movies/'
 
+You need to have created a /movies/ directory with a command like `ipfs files mkdir /movies/`
+
 ------
 
 #### ipns-refresh.bash

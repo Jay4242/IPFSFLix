@@ -1,6 +1,7 @@
 #!/bin/bash
 let plexserv=0
 let jellyserv=0
+namedir="/dev/null/"
 
 #If plex is running, remember that and stop plex.  (prevents using a file/directory while we change things)
 if sudo service plexmediaserver status | grep -i "(running)"
@@ -17,14 +18,20 @@ then
 fi
 
 #Unmount IPFS/IPNS mounts.
-sudo umount /ipfs
-sudo umount /ipns
+mapfile -t mounts < <(mount | grep -i -e "/ipfs" -e "/ipns" | awk -F' ' '{print $3}')
+for mount in "${mounts[@]}" ; do
+  sudo umount "${mount}"
+done
 
 #Publish the new 'movies' directory.
 ipfs name publish --key=movies "$(ipfs files stat --hash /movies)"
 
 #Re-mount the IPFS/IPNS mounts.
-ipfs mount
+mapfile -t paths < <(cat ${namedir}ipfs-namemap.txt | awk -F'::' '{print $4}' | sort -u)
+for path in "${paths[@]}" ; do
+  export IPFS_PATH=${path}
+  ipfs mount
+done
 
 #Refresh local symlinks to IPFS addresses.
 ipns-refresh.bash

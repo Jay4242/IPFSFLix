@@ -1,0 +1,6 @@
+../../..::ipfs-public-domain::/ipns/k51qzi5uqu5dm003wyasjdmljt5ekqos1ptq73n2l2zplvv9672jqkftlqyica::~/.ipfs/
+..::ipfs-movies::/ipns/IPNS-MOVIES-CID::/foo/bar/.ipfs-family/
+..::ipfs-series::/ipns/IPNS-SERIES-CID::/foo/bar/.ipfs-family/
+
+###Format
+RelativePath::SymlinkName::IPNSAddress::IPFS_PATH

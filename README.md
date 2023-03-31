@@ -10,6 +10,10 @@ With the IPFS network mounted to a local machine Jellyfin & Plex are capable of 
 
 Devices with limited storage can have access to a huge on-demand library.  Say a Raspberry Pi at an office, relative's home, etc.
 
+IPFS by itself can easily turn into a confusing maze of CIDs.  (Most things are represented by CIDs.)
+Media Organizers like Jellyfin & Plex seem like a natural fit to this maze.
+
+
 -------
 
 
@@ -55,3 +59,13 @@ Example to a small **public domain** sample of videos,
 `../../..::ipfs-public-domain::/ipns/k51qzi5uqu5dm003wyasjdmljt5ekqos1ptq73n2l2zplvv9672jqkftlqyica::~/.ipfs/`
  
 ------
+
+### Rough Idea.
+
+ 1. Add media to IPFS using the IPFS 'filestore.'
+ 2. Create an IPNS directory that virtually holds that media.
+ 3. Share this IPNS address with other devices.
+ 4. Other devices symlink the IPNS address to the IPFS 'mount' locations.
+ 5. Jellyfin & Plex add those symlinked directories to their Libraries.
+ 6. Use Jellyfin & Plex as normal.
+ 7. Use a Private Swarm if you want privacy.

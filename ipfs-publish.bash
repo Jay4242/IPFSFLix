@@ -1,7 +1,7 @@
 #!/bin/bash
 let plexserv=0
 let jellyserv=0
-namedir="/dev/null/"
+symlinkdir="/dev/null/"
 
 #If plex is running, remember that and stop plex.  (prevents using a file/directory while we change things)
 if sudo service plexmediaserver status | grep -i "(running)"
@@ -27,7 +27,7 @@ done
 ipfs name publish --key=movies "$(ipfs files stat --hash /movies)"
 
 #Re-mount the IPFS/IPNS mounts.
-mapfile -t paths < <(cat ${namedir}ipfs-namemap.txt | awk -F'::' '{print $4}' | sort -u)
+mapfile -t paths < <(cat ${symlinkdir}ipfs-namemap.txt | awk -F'::' '{print $4}' | sort -u)
 for path in "${paths[@]}" ; do
   export IPFS_PATH=${path}
   ipfs mount

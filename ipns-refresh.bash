@@ -1,10 +1,10 @@
 #!/bin/bash
 namemap="ipfs-namemap.list"             #Text file with relative/path::symlink-name::/ipns/address::IPFS_PATH for each IPNS address to resolve & symlink.
-basedir="/dev/null/ipfs-media/"        #CHANGE THIS.  Base directory the symlinks will be located at, along with the above namemap.
+symlinkdir="/dev/null/ipfs-media/"        #CHANGE THIS.  Base directory the symlinks will be located at, along with the above namemap.
 timeout="30"                           #Timeout for both IPNS resolve & 'tree' of the files & directories to fetch the structure.  Both can potentially take a long time.
 
 #cd to symlink base directory.
-cd "${basedir}" || exit 1
+cd "${symlinkdir}" || exit 1
 
 #find any existing symlinks.
 mapfile -t links < <(find . -maxdepth 1 -type l | sed 's,^\./,,')

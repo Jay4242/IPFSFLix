@@ -10,7 +10,7 @@ With the IPFS network mounted to a local machine Jellyfin & Plex are capable of 
 
 Devices with limited storage can have access to a huge on-demand library.  Say a Raspberry Pi at an office, relative's home, etc.
 
-IPFS by itself can easily turn into a confusing maze of CIDs.  (Most things are represented by CIDs.)
+IPFS by itself can easily turn into a confusing maze.  
 Media Organizers like Jellyfin & Plex seem like a natural fit to this maze.
 
 

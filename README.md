@@ -60,7 +60,7 @@ Example to a small **public domain** sample of videos,
  
 ------
 
-### Rough Idea.
+### Rough Idea
 
  1. Add media to IPFS using the IPFS 'filestore.'
  2. Create an IPNS directory that virtually holds that media.

@@ -46,9 +46,10 @@ A text file that stores the IPNS addresses to resolve to symlinks.
  - IPNS address - The IPNS address that will be resolved for that symlink.
  - IPFS_PATH - The IPFS_PATH needed to access the right IPFS daemon.  Most people would use ~/.ipfs/ for the default public swarm.
  
- Uses '::' separators.
+Uses '::' separators.
  
- Example to a small **public domain** sample of videos,
- `../../..::ipfs-public-domain::/ipns/k51qzi5uqu5dm003wyasjdmljt5ekqos1ptq73n2l2zplvv9672jqkftlqyica::~/.ipfs/`
+Example to a small **public domain** sample of videos,
+ 
+`../../..::ipfs-public-domain::/ipns/k51qzi5uqu5dm003wyasjdmljt5ekqos1ptq73n2l2zplvv9672jqkftlqyica::~/.ipfs/`
  
 ------

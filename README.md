@@ -43,7 +43,7 @@ Uses a text file such as the ipfs-namemap.list.sample to create symlinks in a sp
 A text file that stores the IPNS addresses to resolve to symlinks.
 
 ##### Fields
- - Relative Path - Used to tell the script where the mounted IPFS/IPNS endpoints will be located.  Useful if you have multiple IPFS mountpoints, perhaps the main swarm and a private swarm.  Something like '../../..' if the /ipfs/ mount is three directories above the symlink directory.
+ - Relative Path to IPFS/IPNS Mounts - Used to tell the script where the mounted IPFS/IPNS endpoints will be located.  Useful if you have multiple IPFS mountpoints, perhaps the main swarm and a private swarm.  Something like '../../..' if the /ipfs/ mount is three directories above the symlink directory.
  - Symlink name - The name you want to give the symlink directory.
  - IPNS address - The IPNS address that will be resolved for that symlink.
  - IPFS_PATH - The IPFS_PATH needed to access the right IPFS daemon.  Most people would use ~/.ipfs/ for the default public swarm.

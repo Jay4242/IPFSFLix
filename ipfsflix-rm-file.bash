@@ -1,6 +1,6 @@
 #!/bin/bash
-## ipfs-rm-file.bash
-## To search the ipfs-filesystem.list and remove any corresponding matches from the IPFS MFS, IPFS pins, and finally the ipfs-filesystem.list.
+## ipfsflix-rm-file.bash
+## To search the ipfsflix-filesystem.list and remove any corresponding matches from the IPFS MFS, IPFS pins, and finally the ipfs-filesystem.list.
 
 #Load configuration.
 if [ -e ~/.config/ipfsflix.conf ] ; then
@@ -18,7 +18,7 @@ fi
 search_phrase="$*"
 
 #Search the file log for the file.
-mapfile -t possible_matches < <(grep -i "${search_phrase}" ${confdir}ipfs-filesystem.list)
+mapfile -t possible_matches < <(grep -i "${search_phrase}" ${confdir}ipfsflix-filesystem.list)
 
 #Loop through matching lines.
 for match in "${possible_matches}" ; do
@@ -42,6 +42,6 @@ for match in "${possible_matches}" ; do
     ipfs pin rm -r $(echo "${match}" | awk -F'::' '{print $3 }') || exit 1
 
     #Remove match from ipfs-filesystem.list.
-    sed -i "\|^${match}|d" ${confdir}ipfs-filesystem.list || echo "Failed to remove maching line from ${confdir}ipfs-filesystem.list"
+    sed -i "\|^${match}|d" ${confdir}ipfsflix-filesystem.list || echo "Failed to remove maching line from ${confdir}ipfsflix-filesystem.list"
   fi
 done

@@ -27,14 +27,14 @@ done
 ipfs name publish --key=movies "$(ipfs files stat --hash /movies)"
 
 #Re-mount the IPFS/IPNS mounts.
-mapfile -t paths < <(cat ${symlinkdir}ipfs-namemap.txt | awk -F'::' '{print $4}' | sort -u)
+mapfile -t paths < <(cat ${symlinkdir}ipfsflix-namemap.txt | awk -F'::' '{print $4}' | sort -u)
 for path in "${paths[@]}" ; do
   export IPFS_PATH=${path}
   ipfs mount
 done
 
 #Refresh local symlinks to IPFS addresses.
-ipns-refresh.bash
+ipfsflix-ipns-refresh.bash
 
 #If plex was running before, start it again.
 if [[ "${plexserv}" == "1" ]]

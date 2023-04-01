@@ -27,22 +27,24 @@ All nodes can be clients & servers.  Anything cached to a 'client' node acts as 
 
 ------
 
-#### ipfs-add-movies.bash
+#### ipfsflix-add-movies.bash
 
 Adds videos using the IPFS 'filestore' (to not use extra space) to IPFS & the IPFS MFS filesystem under '/movies/'
 
 You need to have created a /movies/ directory with a command like `ipfs files mkdir /movies/`
 
-------
-
-#### ipns-refresh.bash
-
-Uses a text file such as the `ipfs-namemap.list.sample` to create symlinks in a specified directory.  This resolves the IPNS address to an IPFS address to prevent the directory from hanging when IPNS is unresovlable.  
-
+Currently, only adds the main video, no subs or other files.
 
 ------
 
-#### ipfs-namemap.list.sample
+#### ipnsflix-refresh.bash
+
+Uses a text file such as the `ipfsflix-namemap.list.sample` to create symlinks in a specified directory.  This resolves the IPNS address to an IPFS address to prevent the directory from hanging when IPNS is unresovlable.  
+
+
+------
+
+#### ipfsflix-namemap.list.sample
 
 A text file that stores the IPNS addresses to resolve to symlinks.
 
@@ -60,7 +62,7 @@ Example to a small **public domain** sample of videos,
  
 ------
 
-#### ipfs-rm-file.bash `{search phrase}`
+#### ipfsflix-rm-file.bash `{search phrase}`
 
 Searches the `ipfs-filesystem.list` file to prompt for the deletion of files from the IPFS MFS, the IPFS pin, and then finally the `ipfs-filesystem.list` itself.
 

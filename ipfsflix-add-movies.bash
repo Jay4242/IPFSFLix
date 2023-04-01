@@ -9,7 +9,7 @@ else
   echo "Configuration not found at ~/.config/ipfsflix.conf"
   exit 1
 fi
-mapfile -t movies < <(find $(pwd) \( -iname "*.mp4" -o -iname "*.mkv" \) -print | sort )
+mapfile -t movies < <(find -L $(pwd) \( -iname "*.mp4" -o -iname "*.mkv" \) -print | sort )
 
 for movie in "${movies[@]}" ; do
   echo "${movie}"

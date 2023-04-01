@@ -110,4 +110,8 @@ Problem: If that became popular, running a new IPFS node per subscription would 
 
 ------
 
+#### Bugs
 
+There's probably lots of bugs.
+
+I don't guarantee that anything here works at any given point.

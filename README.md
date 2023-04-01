@@ -60,6 +60,13 @@ Example to a small **public domain** sample of videos,
  
 ------
 
+#### ipfs-rm-file.bash `{search phrase}`
+
+Searches the `ipfs-filesystem.list` file to prompt for the deletion of files from the IPFS MFS, the IPFS pin, and then finally the `ipfs-filesystem.list` itself.
+
+
+------
+
 ### Rough Idea
 
  1. Add media to IPFS using the IPFS 'filestore.'

@@ -33,7 +33,23 @@ Adds videos using the IPFS 'filestore' (to not use extra space) to IPFS & the IP
 
 You need to have created a /movies/ directory with a command like `ipfs files mkdir /movies/`
 
-Currently, only adds the main video, no subs or other files.
+Currently, only adds the main video, no subs or other files.  Only grabs `mp4` & `mkv` files.
+
+Run in the directory you have a bunch of `mp4` & `mkv` files.
+
+It keeps a file list at `${confdir}/ipfsflix-filesystem.list`.
+
+------
+
+#### ipfsflix-add-file.bash `{file/directory name}`
+
+Adds a single file/directory to ipfsflix.  Ignores any *.txt, *.nfo, *.rar, *.exe files if it's a directory being added.
+
+Prompts for `IPFS_PATH` to use.
+
+Prompts for IPFS MFS location to save.  (currently one level)
+
+It keeps a file list at `${confdir}/ipfsflix-filesystem.list`.
 
 ------
 

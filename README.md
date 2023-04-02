@@ -51,6 +51,22 @@ It keeps a file list at `${confdir}/ipfsflix-filesystem.list`.
 
 ------
 
+#### ipfsflix-add-url.bash `{URL of video}`
+
+There aren't that many direct links to videos hanging around anymore, but if you find some you can add them to IPFSFLix.
+
+The script prompts the user to name the directory to place the file in, since it could be nonsensical to pull text from the URL.
+
+Then the script prompts for the IPFS_PATH and IPFS MFS directory to save it within.
+
+IPFS will download the URL and if successful add it to the IPFS MFS.
+
+This does *not* save the video to the server.
+
+When the file is called over the network the host machine will re-download the file to serve the blocks on IPFS.
+
+------
+
 #### ipfsflix-ipns-refresh.bash
 
 Uses a text file such as the `ipfsflix-namemap.list.sample` to create symlinks in a specified directory.  This resolves the IPNS address to an IPFS address to prevent the directory from hanging when IPNS is unresovlable.  

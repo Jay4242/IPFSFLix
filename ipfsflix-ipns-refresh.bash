@@ -18,9 +18,6 @@ else
   exit 1
 fi
 
-set -x
-namemap="ipfsflix-namemap.txt"             #Text file with relative/path::symlink-name::/ipns/address::IPFS_PATH for each IPNS address to resolve & symlink.
-
 cd "${symlinkdir}" || exit 1
 mapfile -t links < <(find "${symlinkdir}" -maxdepth 1 -type l | sed 's,^\./,,')
 for link in "${links[@]}" ; do

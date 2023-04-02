@@ -119,18 +119,6 @@ Goes in the `confdir` configuration directory set in `~/.config/ipfsflix.conf`.
 
 ------
 
-#### Monetization Idea
-
- 1. Be a content creator.
- 2. Have a patreon following.
- 3. Release content to a Private Swarm with an IPNS key published behind the Patreon Paywall.
- 4. Update the Swarm Key on a schedule, updating it with Patreon posts.
- 5. Everyone switches to the new Swarm Key to access new media.
-
-Problem: If that became popular, running a new IPFS node per subscription would become problematic.
-
-------
-
 #### Bugs
 
 There's probably lots of bugs.

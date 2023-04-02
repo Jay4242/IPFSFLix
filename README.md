@@ -13,9 +13,7 @@ Devices with limited storage can have access to a huge on-demand library.  Say a
 IPFS by itself can easily turn into a confusing maze.  
 Media Organizers like Jellyfin & Plex seem like a natural fit to this maze.
 
-
 -------
-
 
 #### IPNS
 
@@ -53,10 +51,21 @@ It keeps a file list at `${confdir}/ipfsflix-filesystem.list`.
 
 ------
 
-#### ipnsflix-refresh.bash
+#### ipfsflix-ipns-refresh.bash
 
 Uses a text file such as the `ipfsflix-namemap.list.sample` to create symlinks in a specified directory.  This resolves the IPNS address to an IPFS address to prevent the directory from hanging when IPNS is unresovlable.  
 
+------
+
+#### ipfsflix-publish.bash
+
+Publishes your IPFS MFS directories to their corresponding keys.  Publishing 'movies' with the 'movies' key, 'series' with the 'series' key, for example, etc.
+
+------
+
+#### ipfsflix-rm-file.bash `{search phrase}`
+
+Searches the `ipfs-filesystem.list` file to prompt for the deletion of files from the IPFS MFS, the IPFS pin, and then finally the `ipfs-filesystem.list` itself.
 
 ------
 
@@ -75,13 +84,26 @@ Uses '::' separators.
 Example to a small **public domain** sample of videos,
  
 `../../..::ipfs-public-domain::/ipns/k51qzi5uqu5dm003wyasjdmljt5ekqos1ptq73n2l2zplvv9672jqkftlqyica::~/.ipfs/`
+
+Goes in the `confdir` configuration directory set in `~/.config/ipfsflix.conf`.
  
 ------
 
-#### ipfsflix-rm-file.bash `{search phrase}`
+#### ipfsflix-paths.list.sample
 
-Searches the `ipfs-filesystem.list` file to prompt for the deletion of files from the IPFS MFS, the IPFS pin, and then finally the `ipfs-filesystem.list` itself.
+A list of your IPFS_PATHs.  Most people probably have the main swarm at ~/.ipfs.  If you have private swarm node locations add them here as well.
 
+Goes in the `confdir` configuration directory set in `~/.config/ipfsflix.conf`.
+
+------
+
+#### ipfsflix-filesystem.list.sample
+
+The scripts that add files should add to this file in the `confdir` configuration directory.
+
+`ipfsflix-rm-file.bash` removes lines from this file when files are unpinned and removed from the IPFS MFS.
+
+Goes in the `confdir` configuration directory set in `~/.config/ipfsflix.conf`.
 
 ------
 
@@ -106,7 +128,6 @@ Searches the `ipfs-filesystem.list` file to prompt for the deletion of files fro
  5. Everyone switches to the new Swarm Key to access new media.
 
 Problem: If that became popular, running a new IPFS node per subscription would become problematic.
-
 
 ------
 

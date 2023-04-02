@@ -1,6 +1,6 @@
 #!/bin/bash
-let plexserv=0
-let jellyserv=0
+
+#Load configuration file.
 if [ -e ~/.config/ipfsflix.conf ] ; then
   source ~/.config/ipfsflix.conf || exit 1
   if [ -z "${confdir}" ] ; then
@@ -12,12 +12,18 @@ else
   exit 1
 fi
 
+#Set initial variables.
+let plexserv=0
+let jellyserv=0
+
+#If Plex is running, stop it to avoid it being in a symlink.
 if sudo service plexmediaserver status | grep -i "(running)"
 then
    let plexserv=1
    sudo service plexmediaserver stop
 fi
 
+#If Jellyfin is running, stop it to avoid it being in a symlink.
 if sudo service jellyfin status | grep -i "(running)"
 then
    let jellyserv=1

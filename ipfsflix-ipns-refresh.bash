@@ -21,9 +21,9 @@ fi
 cd "${symlinkdir}" || exit 1
 mapfile -t links < <(find "${symlinkdir}" -maxdepth 1 -type l | sed 's,^\./,,')
 for link in "${links[@]}" ; do
-  grep -q "${link}" "${confdir}/ipfsflix-namemap.txt" || rm "${link}"
+  grep -q "${link}" "${confdir}/ipfsflix-namemap.list" || rm "${link}"
 done
-mapfile -t ipns < <(cat "${confdir}/ipfsflix-namemap.txt") || exit 1
+mapfile -t ipns < <(cat "${confdir}/ipfsflix-namemap.list") || exit 1
 for ipn in "${ipns[@]}" ; do
   export IPFS_PATH=$(echo "${ipn}" | awk -F'::' '{print $4}')
   vname=$(echo "${ipn}" | awk -F'::' '{print $2 }')

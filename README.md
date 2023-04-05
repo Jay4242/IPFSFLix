@@ -75,7 +75,7 @@ Uses a text file such as the `ipfsflix-namemap.list.sample` to create symlinks i
 
 #### ipfsflix-mfs-remap.bash
 
-Sometimes the IPFS MFS seems to lose track of things sometimes.  I'll have files that go missing.
+Sometimes the IPFS MFS seems to lose track of things.  I'll have files that go missing.
 
 `ipfsflix-mfs-remap.bash` goes through the `ipfsflix-filesystem.list` to 'remap' anything that wasn't in the MFS.
 
